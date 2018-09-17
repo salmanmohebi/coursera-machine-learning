@@ -106,6 +106,8 @@ fprintf('\n');
 % not need to be normalized.
 price = 0; % You should change this
 
+normal_input = ([1650, 3]-mu(1, :))./sigma(1, :);
+price = sum([1, normal_input] .* theta')
 
 % ============================================================
 
@@ -151,7 +153,7 @@ fprintf('\n');
 % ====================== YOUR CODE HERE ======================
 price = 0; % You should change this
 
-
+price = sum(theta.*[1; 1650; 3])
 % ============================================================
 
 fprintf(['Predicted price of a 1650 sq-ft, 3 br house ' ...
